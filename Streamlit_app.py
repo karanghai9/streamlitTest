@@ -8,6 +8,8 @@ def load_model():
         vectorizer, model = pickle.load(f)
     return vectorizer, model
 
+vectorizer, model = load_model()
 
-
+# Streamlit UI for SMS input
+st.title("SMS Classification")
 
