@@ -13,3 +13,13 @@ vectorizer, model = load_model()
 # Streamlit UI for SMS input
 st.title("SMS Classification")
 
+sms = st.text_input('Enter your SMS')
+
+if st.button("Predict"):
+    if sms:
+        sms_vectorized = vectorizer.transform([sms])
+        prediction = model.predict(sms_vectorized)
+        st.write(f"Prediction: {prediction[0]}")
+    else:
+        st.write("Please enter an SMS for prediction.")
+
