@@ -11,13 +11,13 @@ def load_model():
 vectorizer, model = load_model()
 
 # Streamlit UI for SMS input
-st.title("SMS Classification")
+st.title("Spam or Non-spam Email Classifier")
 
-sms = st.text_input('Enter your SMS')
+sms = st.text_input('Enter your Email')
 
 if st.button("Predict"):
     if sms:
-        # Vectorize the input SMS
+        # Vectorize the input Email
         sms_vectorized = vectorizer.transform([sms])
         prediction = model.predict(sms_vectorized)
 
