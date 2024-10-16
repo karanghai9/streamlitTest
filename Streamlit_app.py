@@ -4,7 +4,7 @@ import pickle
 # 1. Load the saved pickle model and vectorizer
 @st.cache_resource
 def load_model():
-    with open('model_pickle', 'rb') as f:
+    with open('model_pickle.pkl', 'rb') as f:
         vectorizer, model = pickle.load(f)
     return vectorizer, model
 
