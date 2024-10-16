@@ -27,5 +27,5 @@ if st.button("Predict"):
         else:
             st.write("Prediction: **Not Spam**")
     else:
-        st.write("Please enter an SMS for prediction.")
+        st.write("Please enter an Email for prediction.")
 
