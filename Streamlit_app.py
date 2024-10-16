@@ -17,9 +17,15 @@ sms = st.text_input('Enter your SMS')
 
 if st.button("Predict"):
     if sms:
+        # Vectorize the input SMS
         sms_vectorized = vectorizer.transform([sms])
         prediction = model.predict(sms_vectorized)
-        st.write(f"Prediction: {prediction[0]}")
+
+        # Display the result based on the prediction
+        if prediction[0] == 1:
+            st.write("Prediction: **Spam**")
+        else:
+            st.write("Prediction: **Not Spam**")
     else:
         st.write("Please enter an SMS for prediction.")
 
