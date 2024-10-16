@@ -5,7 +5,7 @@ import pickle
 @st.cache_resource
 def load_model():
     with open('model_pickle.pkl', 'rb') as f:
-        vectorizer, model = pickle.load(f)
+        vectorizer, model = pickle.load(f)  # Load both
     return vectorizer, model
 
 vectorizer, model = load_model()
